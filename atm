@@ -1,0 +1,54 @@
+from time import sleep
+
+def password():
+    pin = int(input("Please, Enter your pin: "))
+    if pin == 5234:
+        print("CORRECT ACCOUNT,please wait we are fecthing your data")
+        sleep(2)
+        return True
+    else:
+        print("INCORRECT PIN ,ATHENTICATION FAILED")
+        return False
+
+
+def ATM_start():
+
+    balance = 0
+
+    print("Hello Welcome to SPACE ATM")
+    if password():
+        while True:
+            print("PRESS '1' FOR CHECKING BALANCE")
+            print("PRESS '2' FOR WITHDRAWL")
+            print("PRESS '3' FOR DEPOSIT")
+            print("PRESS '4' FOR EXITING OUT OF SPACE ATM")
+
+            choose = int(input("\nChoose which money transaction fits your day: "))
+
+            if choose == 1:
+                print("Please wait we are fecthing your data...")
+                sleep(2)
+                print("YOUR ACCOUNT BALANCEIS: ",balance)
+
+            elif choose == 2:
+                print("Please wait er are fecthing your data...")
+                sleep(2)
+                withdrawl = int(input("HOW MUCH MONEY DO YOU WANT TO TAKE FROM YOU ACCOUNT: "))
+                balance = balance - withdrawl
+                print("YOU HAVE SUCCESFULLY TAKEN {withdrawl} MONEY FROM YOUR ACCOUNT")
+
+            elif choose == 3:
+                print("Please wait er are fecthing your data...")
+                sleep(2)
+                deposit = int(input("HOW MUCH MONEY DO YOU WANT TO  ADD IN YOU ACCOUNT"))
+                balance = balance + deposit
+                print(f"YOU HAVE SUCCESFULLY ADDED {deposit} MONEY TO YOUR MONEY")
+
+            elif choose == 4:
+                print("Please wait we are fecthing your input...")
+                sleep(2)
+                print("this is your balance {balance} ")
+                print("Please wait we are logging out of your ACCOUNT...")
+                sleep(2)
+                break
+                atm_start()
